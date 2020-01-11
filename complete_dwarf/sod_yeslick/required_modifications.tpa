@@ -1,0 +1,27 @@
+DEFINE_ACTION_FUNCTION required_modifications
+BEGIN
+  LAUNCH_ACTION_FUNCTION clone_creature
+    STR_VAR
+    creature	= "yeslic5=>yeslic7"
+    editstring	= ~xp_total=>64000 script_override=>"bdyeslic" script_class=>null script_race=>"bdshout" script_general=>"bdpries1" script_default=>null dialog=>"bdyeslic"~
+  END
+
+  COPY_EXISTING "bd0103.bcs" "override"
+    DECOMPILE_AND_PATCH
+    BEGIN
+      REPLACE_TEXTUALLY CASE_INSENSITIVE EXACT_MATCH
+       ~ActionOverride("yeslick",LeaveParty())~
+       ~ApplySpellRES("bdresurr", "yeslick")
+        SmallWait(1)
+        ActionOverride("yeslick", LeaveParty())~
+    END
+
+  LAUNCH_ACTION_FUNCTION extend_area_script
+    STR_VAR
+    area	= "bd1200"
+    top		= "yeslick_bd1200"
+    location	= "scripts/additions"
+  END
+END	// required_modifications
+
+

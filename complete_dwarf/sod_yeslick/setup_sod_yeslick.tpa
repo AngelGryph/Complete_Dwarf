@@ -1,0 +1,15 @@
+DEFINE_ACTION_FUNCTION setup_sod_yeslick
+BEGIN
+  LAUNCH_ACTION_FUNCTION run
+    STR_VAR
+    file	= "required_modifications"
+  END
+
+  LAUNCH_ACTION_FUNCTION run
+    STR_VAR
+    file	= "yeslick_dialog_script"
+    tra		= "yeslick_dialog_script"
+  END
+END	// setup_sod_yeslick
+
+

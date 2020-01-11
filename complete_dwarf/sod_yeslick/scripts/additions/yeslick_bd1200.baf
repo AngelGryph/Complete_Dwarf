@@ -1,0 +1,38 @@
+IF
+  Global("bd_yeslick_spawn", "bd1200", 0)
+  !Dead("Yeslick")
+  BeenInParty("Yeslick")
+THEN
+  RESPONSE #100
+    SetGlobal("bd_yeslick_spawn", "bd1200", 1)
+    MoveGlobal("bd1200", "Yeslick", [905.1600])
+    ActionOverride("Yeslick", Face(SSW))
+    ApplySpellRES("bdrejuve", "Yeslick")
+    ChangeEnemyAlly("Yeslick", NEUTRAL)
+    ChangeSpecifics("Yeslick", ALLIES)
+    ActionOverride("Yeslick", SetGlobal("bd_joined", "locals", 0))
+    ActionOverride("Yeslick", SetGlobal("bd_retreat", "locals", 0))
+    ActionOverride("Yeslick", SaveObjectLocation("LOCALS", "bd_default_loc", Myself))
+    ActionOverride("Yeslick", ChangeAIScript("bdyeslic", OVERRIDE))
+    ActionOverride("Yeslick", ChangeAIScript("", CLASS))
+    ActionOverride("Yeslick", ChangeAIScript("bdshout", RACE))
+    ActionOverride("Yeslick", ChangeAIScript("bdpries1", GENERAL))
+    ActionOverride("Yeslick", ChangeAIScript("", DEFAULT))
+    ActionOverride("Yeslick", SetDialogue("bdyeslic"))
+    Continue()
+END
+
+IF
+  Global("bd_yeslick_spawn", "bd1200", 0)
+  !Dead("Yeslick")
+  !BeenInParty("Yeslick")
+THEN
+  RESPONSE #100
+    SetGlobal("bd_yeslick_spawn", "bd1200", 1)
+    CreateCreature("yeslic7", [905.1600], SSW)
+    ActionOverride("Yeslick", MakeGlobalOverride())
+    ChangeSpecifics("Yeslick", ALLIES)
+    Continue()
+END
+
+

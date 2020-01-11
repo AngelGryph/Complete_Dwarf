@@ -1,0 +1,14 @@
+DEFINE_ACTION_FUNCTION yeslick_dialog_script
+BEGIN
+  LAUNCH_ACTION_FUNCTION compile_all
+    STR_VAR
+    location	= "dialog"
+  END
+
+  LAUNCH_ACTION_FUNCTION compile_all
+    STR_VAR
+    location	= "scripts"
+  END
+END	// setup_sod_yeslick
+
+

@@ -1,0 +1,35 @@
+DEFINE_ACTION_FUNCTION setup_alaghar_kit
+BEGIN
+  LAUNCH_ACTION_FUNCTION check_ini
+    STR_VAR
+    ini		= "make_yeslick_alaghar"
+    RET
+    make_yeslick_alaghar	= value
+  END
+
+  LAUNCH_ACTION_FUNCTION run
+    STR_VAR
+    file	= "alaghar_resources"
+  END
+
+  LAUNCH_ACTION_FUNCTION run
+    STR_VAR
+    file	= "alaghar_core"
+    tra		= "alaghar_core"
+  END
+
+  ACTION_IF GAME_INCLUDES "bg1" && make_yeslick_alaghar
+  BEGIN
+    LAUNCH_ACTION_FUNCTION run
+      STR_VAR
+      file	= "alaghar_yeslick"
+    END
+  END
+
+  LAUNCH_ACTION_FUNCTION run
+    STR_VAR
+    file	= "alaghar_aftercare"
+  END
+END	// setup_alaghar_kit
+
+

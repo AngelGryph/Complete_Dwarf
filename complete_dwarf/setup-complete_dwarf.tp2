@@ -1,0 +1,44 @@
+// Complete Dwarf
+//
+// WeiDU installer
+
+BACKUP "weidu_external/backup/complete_dwarf"
+
+AUTHOR "angel@pearlgates.net"
+VERSION v1
+
+ASK_EVERY_COMPONENT
+NO_IF_EVAL_BUG
+AUTO_EVAL_STRINGS
+
+ALWAYS
+  OUTER_SPRINT MOD_NAME "complete_dwarf"
+  OUTER_SPRINT MOD_VERSION "v1"
+
+  INCLUDE "complete_dwarf/lib/always.tph"
+END	// ALWAYS block
+
+
+LANGUAGE "English"
+         "english"
+	 "complete_dwarf/language/english/setup-complete_dwarf.tra"
+
+
+BEGIN ~Alaghar of Clangeddin Kit~
+
+LAUNCH_ACTION_FUNCTION run
+  STR_VAR
+  file		= "setup_alaghar_kit"
+  location	= "alaghar"
+END
+
+
+BEGIN ~Yeslick in Siege of Dragonspear~
+
+LAUNCH_ACTION_FUNCTION run
+  STR_VAR
+  file		= "setup_sod_yeslick"
+  location	= "sod_yeslick"
+END
+
+
