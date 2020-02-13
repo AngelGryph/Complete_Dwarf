@@ -1,6 +1,6 @@
 # Complete Dwarf
 A set of modifications for Baldur's Gate centered around dwarves,
-especially Yeslick.
+especially Yeslick.  Might eventually feature a new dwarf NPC.
 
 
 ## Introduction
@@ -9,7 +9,7 @@ especially Yeslick.
 
 ## Version History
 
-Version 1 - January ?? 2020
+Version 1 - ?? 2020
 - First Release
 
 
